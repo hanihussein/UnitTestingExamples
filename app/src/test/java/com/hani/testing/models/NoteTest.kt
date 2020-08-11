@@ -1,6 +1,5 @@
 package com.hani.testing.models
 
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNotEquals
 import org.junit.jupiter.api.Test
@@ -24,11 +23,9 @@ class NoteTest {
     @Test
     fun isNotesEqual_identicalProperties_returnTrue() {
         val note1 = Note(1, "Note NO.1", "this is Note no. 1", TIMESTAMP_1)
-
         val note2 = Note(1, "Note NO.1", "this is Note no. 1", TIMESTAMP_1)
 
         assertEquals(note1, note2)
-
         System.out.println("The notes are equal!")
     }
 
@@ -43,7 +40,6 @@ class NoteTest {
         val note2 = Note(2, "Note NO.1", "this is Note no. 1", TIMESTAMP_1)
 
         assertNotEquals(note1, note2)
-
         System.out.println("The notes are not equal!")
     }
 
@@ -70,7 +66,6 @@ class NoteTest {
         val note2 = Note(1, "Note NO.2", "this is Note no. 1", TIMESTAMP_1)
 
         assertNotEquals(note1, note2)
-
         System.out.println("The notes are not equal!")
     }
     /*
@@ -84,7 +79,6 @@ class NoteTest {
         val note2 = Note(1, "Note NO.1", "this is Note no. 2", TIMESTAMP_1)
 
         assertNotEquals(note1, note2)
-
         System.out.println("The notes are not equal!")
     }
 }

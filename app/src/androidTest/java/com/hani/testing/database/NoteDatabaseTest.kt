@@ -1,17 +1,19 @@
 package com.hani.testing.database
 
 import androidx.room.Room
+
 import androidx.test.core.app.ApplicationProvider
+
 import com.hani.testing.persistance.NoteDao
 import com.hani.testing.persistance.NoteDatabase
 import org.junit.After
 import org.junit.Before
 
-class DatabaseTest {
+abstract class NoteDatabaseTest {
 
     lateinit var noteDatabase: NoteDatabase
 
-    fun getNoteDae(): NoteDao = noteDatabase.getNoteDae()
+    fun getNoteDao(): NoteDao = noteDatabase.getNoteDao()
 
     @Before
     fun init() {

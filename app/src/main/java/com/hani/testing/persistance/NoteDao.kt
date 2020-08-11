@@ -9,16 +9,16 @@ import io.reactivex.Single
 interface NoteDao {
     @Insert
     @Throws(Exception::class)
-    fun insertNote(note: Note?): Single<Long>
+    fun insertNote(note: Note): Single<Long>
 
     @Query("SELECT * FROM notes")
     fun notes(): LiveData<List<Note>>
 
     @Delete
     @Throws(Exception::class)
-    fun deleteNote(note: Note?): Single<Int>
+    fun deleteNote(note: Note): Single<Int>
 
     @Update
     @Throws(Exception::class)
-    fun updateNote(note: Note?): Single<Int>
+    fun updateNote(note: Note): Single<Int>
 }

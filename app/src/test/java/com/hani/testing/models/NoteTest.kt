@@ -7,10 +7,8 @@ import org.junit.jupiter.api.Test
 class NoteTest {
 
     companion object {
-
         val TIMESTAMP_1 = "05-2020"
         val TIMESTAMP_2 = "05-2020"
-
     }
 
     /*
@@ -24,7 +22,6 @@ class NoteTest {
     fun isNotesEqual_identicalProperties_returnTrue() {
         val note1 = Note(1, "Note NO.1", "this is Note no. 1", TIMESTAMP_1)
         val note2 = Note(1, "Note NO.1", "this is Note no. 1", TIMESTAMP_1)
-
         assertEquals(note1, note2)
         System.out.println("The notes are equal!")
     }

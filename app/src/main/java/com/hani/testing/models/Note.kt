@@ -76,7 +76,7 @@ class Note : Parcelable {
         if (javaClass != obj.javaClass) {
             return false
         }
-        val note = obj as Note
+         val note = obj as Note
         return note.id == id && note.title == title && note.content == content
 
     }
@@ -86,6 +86,7 @@ class Note : Parcelable {
     }
 
     companion object {
+        @JvmField
         val CREATOR: Parcelable.Creator<Note> =
             object : Parcelable.Creator<Note> {
                 override fun createFromParcel(`in`: Parcel): Note? {

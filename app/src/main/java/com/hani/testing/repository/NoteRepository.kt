@@ -45,7 +45,7 @@ class NoteRepository @Inject constructor(var noteDao: NoteDao) {
                     if (t > 0) {
                         return Resource.success(t, INSERT_SUCCESS)
                     } else
-                        return Resource.error(0, INSERT_FAILURE)
+                        return Resource.error(null, INSERT_FAILURE)
                 }
             })
             .subscribeOn(Schedulers.io())
@@ -68,7 +68,7 @@ class NoteRepository @Inject constructor(var noteDao: NoteDao) {
                     if (t > 0) {
                         return Resource.success(t, UPDATE_SUCCESS)
                     } else
-                        return Resource.error(0, UPDATE_FAILURE)
+                        return Resource.error(null, UPDATE_FAILURE)
                 }
             })
             .subscribeOn(Schedulers.io())

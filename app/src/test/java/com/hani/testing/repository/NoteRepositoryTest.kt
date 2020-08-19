@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.extension.ExtendWith
 import org.junit.jupiter.api.function.Executable
 import org.mockito.Mockito.*
 
@@ -45,14 +44,14 @@ class NoteRepositoryTest {
         ).thenReturn(returnedData)
 
         //Act
-        val returnedValue = noteRepository.insertNotes(TestUtil.TEST_NOTE_1).blockingFirst()
+        val returnedValue = noteRepository.insertNote(TestUtil.TEST_NOTE_1).blockingFirst()
 
         // Assert
         verify(noteDao).insertNote(MockitoUtil<Note>().anyObject())
         verifyNoMoreInteractions(noteDao)
 
         System.out.println("Returned value: " + returnedValue.data)
-        assertEquals(Resource.success(1, noteRepository.INSERT_SUCCESS), returnedValue)
+        assertEquals(Resource.success(1, NoteRepository.INSERT_SUCCESS), returnedValue)
 
     }
 
@@ -71,13 +70,13 @@ class NoteRepositoryTest {
         ).thenReturn(returnedData)
 
         //Act
-        val returnedValue = noteRepository.insertNotes(TestUtil.TEST_NOTE_1).blockingFirst()
+        val returnedValue = noteRepository.insertNote(TestUtil.TEST_NOTE_1).blockingFirst()
 
         // Assert
         verify(noteDao).insertNote(MockitoUtil<Note>().anyObject())
         verifyNoMoreInteractions(noteDao)
 
-        assertEquals(Resource.error(null, noteRepository.INSERT_FAILURE), returnedValue)
+        assertEquals(Resource.error(null, NoteRepository.INSERT_FAILURE), returnedValue)
     }
 
     /*
@@ -93,9 +92,16 @@ class NoteRepositoryTest {
             override fun execute() {
                 val note = Note(TestUtil.TEST_NOTE_1)
                 note.title = null
-                noteRepository.insertNotes(note)
+                noteRepository.insertNote(note)
             }
         })
-
     }
+
+
+    /*
+    Update note
+    verify correct method is called
+    confirm observer is trigger
+    confirm number of  row inserted
+     */
 }

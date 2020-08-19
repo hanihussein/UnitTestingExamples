@@ -9,6 +9,7 @@ import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "notes")
+
 class Note : Parcelable {
     @PrimaryKey(autoGenerate = true)
     var id = 0

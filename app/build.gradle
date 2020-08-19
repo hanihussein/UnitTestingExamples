@@ -66,8 +66,11 @@ dependencies {
 
 
     // -------- MOCKITO
-    def mockito_version = "3.1.0"
-    testImplementation "org.mockito:mockito-core:$mockito_version"
+    def mockito_version = "2.2.0"
+    def mockito_inline_version = "2.21.0"
+
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_version"
+    testImplementation "org.mockito:mockito-inline:$mockito_inline_version"
 
     // Dagger
     def dagger_version = "2.27"

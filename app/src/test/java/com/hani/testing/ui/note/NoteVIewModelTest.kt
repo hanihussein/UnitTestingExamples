@@ -87,21 +87,21 @@ open class NoteVIewModelTest {
         )
     }
 
-//    /*insert : don't return a new row without observer*/
-//    @Test
-//    @Throws(Exception::class)
-//    internal fun noNoteInserted_noObserver() {
-//
-//        //Arrange
-//        val note = Note(TestUtil.TEST_NOTE_1)
-//
-//        //Act
-//        noteViewModel.setNote(note)
-//
-//        // Assert
-//        verify(repository, never())
-//            .insertNote(MockitoUtil<Note>().anyObject())
-//    }
+    /*insert : don't return a new row without observer*/
+    @Test
+    @Throws(Exception::class)
+    internal fun noNoteInserted_noObserver() {
+
+        //Arrange
+        val note = Note(TestUtil.TEST_NOTE_1)
+
+        //Act
+        noteViewModel.setNote(note)
+
+        // Assert
+        verify(repository, never())
+            .insertNote(MockitoUtil<Note>().anyObject())
+    }
 
     /*set note , null title , throw exception*/
 

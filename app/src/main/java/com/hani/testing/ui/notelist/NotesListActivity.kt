@@ -1,9 +1,11 @@
 package com.hani.testing.ui.notelist
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import com.hani.testing.R
 import com.hani.testing.repository.NoteRepository
+import com.hani.testing.ui.note.NoteActivity
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 
@@ -17,7 +19,7 @@ class NotesListActivity : DaggerAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notes_list)
-        Log.d("TAG", noteRepository.toString())
+        startActivity(Intent(this , NoteActivity::class.java))
     }
 
 

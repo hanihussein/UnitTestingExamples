@@ -71,7 +71,7 @@ open class NoteVIewModelTest {
         val returnedData =
             SingleToFlowable.just(Resource.success<Int?>(insertedRawValue, NoteRepository.INSERT_SUCCESS))
 
-        Mockito.`when`(repository.insertNote(com.nhaarman.mockitokotlin2.any()))
+        Mockito.`when`(repository.insertNote(MockitoUtil<Note>().anyObject()))
             .thenAnswer {
                 return@thenAnswer returnedData
             }
@@ -106,7 +106,6 @@ open class NoteVIewModelTest {
     /*set note , null title , throw exception*/
 
     @Test
-    @Throws(Exception::class)
     internal fun setNote_nullTitle_throwException() {
 
         //Arrange
